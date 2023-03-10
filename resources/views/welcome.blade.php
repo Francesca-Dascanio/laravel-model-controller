@@ -14,11 +14,40 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="col text-center">
+                    <div class="col">
 
-                        <h1>
+                        <h1 class="text-center my-4">
                             Laravel Model Controller
                         </h1>
+
+                        <div class="cards-container d-flex justify-content-between flex-wrap">
+                            @foreach ($movies as $movie)
+                                <div class="card col-6 col-sm-3 my-margin" style="width: 18rem;">
+                                    <div class="card-header">
+                                        <span>
+                                            {{ $movie->id }}. 
+                                        </span>
+                                        <span>
+                                            {{ $movie->title }}
+                                        </span>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            Original title:  {{ $movie->original_title }}
+                                        </li>
+                                        <li class="list-group-item">
+                                            Nationality:  {{ $movie->nationality }}
+                                        </li>
+                                        <li class="list-group-item">
+                                            Date:  {{ $movie->date }}
+                                        </li>
+                                        <li class="list-group-item">
+                                            Vote:  {{ $movie->vote }}
+                                        </li>
+                                    </ul>
+                                </div> 
+                            @endforeach
+                        </div>
 
                     </div>
                 </div>
